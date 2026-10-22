@@ -1,0 +1,142 @@
+
+<!-- Yaratuvchi: Sag'dullayev Alimardon -->
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sag'dullayev Alimardon">
+    <title>English–Uzbek Lug‘at</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <p class="eyebrow">SO‘Z BOYLIGINGIZNI OSHIRING</p>
+            <h1>English — Uzbek Dictionary</h1>
+            <p class="subtitle">So‘zlar, transkripsiya, misollar va talaffuz</p>
+        </div>
+        <button id="themeBtn" class="theme-btn" type="button">🌙 Qorong‘i rejim</button>
+    </header>
+
+    <main class="container">
+        <section class="search-box">
+            <input id="searchInput" type="search"
+                placeholder="🔎 Inglizcha yoki o‘zbekcha so‘z qidiring..."
+                autocomplete="off" aria-label="So‘z qidirish">
+
+            <select id="categoryFilter" aria-label="Lug‘at mavzusi">
+                <option value="all">Barcha mavzular</option>
+                <option value="daily">Kundalik hayot</option>
+                <option value="food">Oziq-ovqat</option>
+                <option value="study">Ta’lim</option>
+                <option value="travel">Sayohat</option>
+                <option value="work">Ish</option>
+                <option value="home">Uy va oila</option>
+            </select>
+        </section>
+
+        <nav class="controls">
+            <button id="dictionaryBtn" class="tab-btn active" type="button">📚 Lug‘at</button>
+            <button id="quizBtn" class="tab-btn" type="button">📝 Test</button>
+        </nav>
+
+        <section id="dictionarySection">
+            <p id="resultCount" class="result-count"></p>
+            <div id="wordList" class="word-list"></div>
+            <p id="emptyMessage" class="empty-message" hidden>So‘z topilmadi.</p>
+        </section>
+
+        <section id="quizSection" hidden>
+            <div id="quizPanel" class="quiz-panel">
+                <div class="quiz-heading">
+                    <div>
+                        <p class="eyebrow blue-text">BILIMINGIZNI SINANG</p>
+                        <h2>Cheksiz test</h2>
+                    </div>
+                    <span class="live-badge">● TEST FAOL</span>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <span>✅ To‘g‘ri</span>
+                        <strong id="correctCount">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>❌ Noto‘g‘ri</span>
+                        <strong id="wrongCount">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>🔥 Seriya</span>
+                        <strong id="streakCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="quiz-settings">
+                    <label for="quizCategory">Test mavzusi:</label>
+                    <select id="quizCategory">
+                        <option value="all">Aralash (hamma mavzu)</option>
+                        <option value="daily">Kundalik hayot</option>
+                        <option value="food">Oziq-ovqat</option>
+                        <option value="study">Ta’lim</option>
+                        <option value="travel">Sayohat</option>
+                        <option value="work">Ish</option>
+                        <option value="home">Uy va oila</option>
+                    </select>
+                </div>
+
+                <div class="question-meta">
+                    <span id="questionCounter">1-savol</span>
+                    <span id="directionLabel">Inglizcha → O‘zbekcha</span>
+                </div>
+
+                <div class="question-line">
+                    <h3 id="questionText" class="question-text">Savol tayyorlanmoqda...</h3>
+                    <button id="questionSpeakBtn" class="speak-btn"
+                        type="button" aria-label="Savoldagi inglizcha so‘zni o‘qish"
+                        title="Inglizcha so‘zni eshitish" hidden>🔊</button>
+                </div>
+
+                <div id="questionTranscription" class="question-transcription"></div>
+                <div id="answerOptions" class="answer-options"></div>
+                <p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p>
+
+                <div class="quiz-actions">
+                    <button id="nextBtn" class="primary-btn" type="button" disabled>
+                        Keyingi ➜
+                    </button>
+                    <button id="finishBtn" class="finish-btn" type="button">
+                        Testni tugatish
+                    </button>
+                </div>
+
+                <p class="quiz-note">
+                    💡 Barcha so‘zlar bir marta chiqadi. Keyin savollar qayta aralashtiriladi.
+                </p>
+            </div>
+
+            <div id="resultPanel" class="result-panel" hidden>
+                <div class="result-icon">🏆</div>
+                <h2>Test yakunlandi!</h2>
+                <div class="result-stats">
+                    <p>Jami javoblar: <strong id="totalResult">0</strong></p>
+                    <p>To‘g‘ri javoblar: <strong id="correctResult">0</strong></p>
+                    <p>Noto‘g‘ri javoblar: <strong id="wrongResult">0</strong></p>
+                    <p>Eng uzun seriya: <strong id="bestStreakResult">0</strong></p>
+                    <p>To‘g‘ri javob foizi: <strong id="percentResult">0%</strong></p>
+                </div>
+                <button id="restartBtn" class="primary-btn" type="button">
+                    🔄 Yangi test boshlash
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>Yaratuvchi: Sag'dullayev Alimardon</footer>
+
+    <script>
+        console.log("Lug‘at dasturi: Sag'dullayev Alimardon");
+    </script>
+</body>
+</html>
